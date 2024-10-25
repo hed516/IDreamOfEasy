@@ -7,6 +7,22 @@
 
 >[!IMPORTANT]
 > Some items have configuration options for Admins. I highly suggest looking over the `items.yml` once installed to see what kind of options are available. Since IDoE might not suit every server, be sure to configure the plugin to meet your specific needs!
+## Special thanks to the people who made suggestions!
+
+> - **inaxtrawetrust** - "A machine that stops Radiation damage in an area" [Radiation Absorber]
+>    - Note: This was also designed because of so many reports of Radiation griefing!
+> - **林alguém林 有人** - "Biome finding compass a compass that points to the direction of a biome you choose on it, every biome has a different cost like xp or idk what item" [Biome Compass]
+> - **Marvi444[Ger]** - "a player hopper. works like a normal hopper but it puts its items in your inventory instead when you stand under it" [Player Hopper]
+> - **JustAHuman** - "Create A Slime Totem of sorts that when constructed (if its a multiblock) or placed (if its a player head) inside of a slime chunk No slimes will spawn in it, could also have one that does the opposite and causes a chunk to spawn slimes" - [Mob Repeller]
+>    - Note: I haven't added the second part of the suggestion, however I've extended the idea to other mobs!
+> - **AverageUnusualUser** - "Shift + Right clicking while holding infused magnet will toggle "Shift" and "Always" mode, "shift" mode is the infused magnet we know, "always" mode will always attract nearby items without having to press shift as long as the infused magnet is in the inventory, or maybe made it into a separate item in a addon, could be usefull for clearing large area of items without having to slow down because of sneaking" [Magnetoid]
+>    - Note: The Magnetoid was designed previously by me for STB. It's functionality compared to the Infused Magnet was too good to not re-design!
+> - **deserdoo** - "Add a recipe for the 1.20 armor trims. Currently the only way to upgrade your armor to netherite is to find a netherite armor upgrade in a bastion chest. Add some way to craft the upgrade, maybe with magic stuff like a fire rune" [Trim Vault]
+> - **oah** - "Ender talismans take up a ton of room in the enderchest, how about a 'multiEnderTalisman'?" [Idols]
+> - **elitemastereric** - "A variant of the Industrial Miner, which targets all stone and dirt as well as ores. This would essentially allow it to act as a full quarry, which clears out an area until reaching bedrock." [Terrabore]
+> - **hellex7769** - "What would be nice is to have a machine that can strip all wood types for automating other machines." [Electric Log Stripper]
+> - **energized36** - "Add Electric Smokers and Blast Furnaces. (We have normal Electric Furnaces, why are Smokers and Blast Furnaces not a thing?)" [Electric Blast Furnace & Electric Smoker]
+> - **nyctophilio01** - "Add a obsidian boat to extra utilities, crafted like a oak boat but use obsidian and 1 electric motor; this item would be used to traverse over lava eazy" [Lava Boat]
 
 ## Items
 ### Tools
