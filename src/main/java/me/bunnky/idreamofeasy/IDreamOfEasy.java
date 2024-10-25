@@ -56,7 +56,7 @@ public class IDreamOfEasy extends JavaPlugin implements SlimefunAddon {
         if (getConfig().getBoolean("options.auto-update", true)
             && getDescription().getVersion().startsWith("Dev - ")
         ) {
-            new BlobBuildUpdater(this, getFile(), "SlimeVision", "Dev").start();
+            new BlobBuildUpdater(this, getFile(), "IDreamOfEasy", "Dev").start();
         }
     }
 
