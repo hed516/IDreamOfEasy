@@ -19,6 +19,7 @@ import me.bunnky.idreamofeasy.slimefun.items.LavaBoat;
 import me.bunnky.idreamofeasy.slimefun.items.Magnetoid;
 import me.bunnky.idreamofeasy.slimefun.items.idols.DivineIdol;
 import me.bunnky.idreamofeasy.slimefun.items.idols.TorrentIdol;
+import me.bunnky.idreamofeasy.slimefun.machines.ElectricCable;
 import me.bunnky.idreamofeasy.slimefun.machines.PlayerHopper;
 import me.bunnky.idreamofeasy.slimefun.machines.StackDispenser;
 import me.bunnky.idreamofeasy.slimefun.machines.SupplyHopper;
@@ -40,6 +41,7 @@ import me.bunnky.idreamofeasy.slimefun.machines.repellers.SpiderRepeller;
 import me.bunnky.idreamofeasy.slimefun.machines.repellers.WitchRepeller;
 import me.bunnky.idreamofeasy.slimefun.machines.repellers.ZombieRepeller;
 import me.bunnky.idreamofeasy.slimefun.machines.repellers.ZombieVillagerRepeller;
+import me.bunnky.idreamofeasy.utils.IDOEUtility;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
@@ -146,6 +148,51 @@ public class Setup {
             "&fTries to dispense whole",
             "&fstacks",
             ""
+        );
+
+        SlimefunItemStack electricCable = new SlimefunItemStack(
+            "IDOE_ELECTRIC_CABLE",
+            Material.CHAIN,
+            "&aElectric Cable",
+            "",
+            "&fDamages anything that touches it",
+            "",
+            "&8⇨ &aIgnores owner!",
+            "",
+            LoreBuilder.machine(MachineTier.BASIC, MachineType.MACHINE),
+            LoreBuilder.powerPerSecond(100),
+            "",
+            "&eDamage: &72"
+        );
+
+        SlimefunItemStack electricCable2 = new SlimefunItemStack(
+            "IDOE_ELECTRIC_CABLE_2",
+            Material.YELLOW_STAINED_GLASS_PANE,
+            "&aElectric Cable &7(&eII&7)",
+            "",
+            "&fDamages anything that touches it",
+            "",
+            "&8⇨ &aIgnores owner!",
+            "",
+            LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE),
+            LoreBuilder.powerPerSecond(150),
+            "",
+            "&eDamage: &74"
+        );
+
+        SlimefunItemStack electricCable3 = new SlimefunItemStack(
+            "IDOE_ELECTRIC_CABLE_3",
+            Material.IRON_BARS,
+            "&aElectric Cable &7(&eIII&7)",
+            "",
+            "&fDamages anything that touches it",
+            "",
+            "&8⇨ &aIgnores owner!",
+            "",
+            LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
+            LoreBuilder.powerPerSecond(200),
+            "",
+            "&eDamage: &76"
         );
 
         SlimefunItemStack radiationAbsorber = new SlimefunItemStack(
@@ -549,6 +596,24 @@ public class Setup {
             SlimefunItems.STEEL_PLATE, SlimefunItems.BATTERY, SlimefunItems.STEEL_PLATE
         };
 
+        ItemStack[] electricCableRecipe = {
+            new ItemStack(Material.CHAIN), new ItemStack(Material.CHAIN), new ItemStack(Material.CHAIN),
+            new ItemStack(Material.CHAIN), SlimefunItems.ENERGY_CONNECTOR, new ItemStack(Material.CHAIN),
+            new ItemStack(Material.CHAIN), new ItemStack(Material.CHAIN), new ItemStack(Material.CHAIN)
+        };
+
+        ItemStack[] electricCable2Recipe = {
+            electricCable, electricCable, electricCable,
+            electricCable, SlimefunItems.ENERGY_CONNECTOR, electricCable,
+            electricCable, electricCable, electricCable
+        };
+
+        ItemStack[] electricCable3Recipe = {
+            electricCable2, electricCable2, electricCable2,
+            electricCable2, SlimefunItems.ENERGY_CONNECTOR, electricCable2,
+            electricCable2, electricCable2, electricCable2
+        };
+
         ItemStack[] radiationAbsorberRecipe = {
             SlimefunItems.REINFORCED_PLATE, SlimefunItems.NETHER_ICE_COOLANT_CELL, SlimefunItems.REINFORCED_PLATE,
             SlimefunItems.HEATING_COIL, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.HEATING_COIL,
@@ -746,6 +811,9 @@ public class Setup {
         SlimefunItem playerHopperItem = new PlayerHopper(group, playerHopper, RecipeType.MAGIC_WORKBENCH, playerHopperRecipe, 500, 5000);
         SlimefunItem supplyHopperItem = new SupplyHopper(group, supplyHopper, RecipeType.MAGIC_WORKBENCH, supplyHopperRecipe, 500, 5000);
         SlimefunItem stackDispenserItem = new StackDispenser(group, stackDispenser, RecipeType.MAGIC_WORKBENCH, stackDispenserRecipe);
+        SlimefunItem electricCableItem = new ElectricCable(group, electricCable, RecipeType.MAGIC_WORKBENCH, electricCableRecipe, IDOEUtility.output(electricCable, 8), 200, 2000, 2.0, 0.5);
+        SlimefunItem electricCableItem2 = new ElectricCable(group, electricCable2, RecipeType.MAGIC_WORKBENCH, electricCable2Recipe, IDOEUtility.output(electricCable2, 8), 300, 3000, 4.0, 1);
+        SlimefunItem electricCableItem3 = new ElectricCable(group, electricCable3, RecipeType.MAGIC_WORKBENCH, electricCable3Recipe, IDOEUtility.output(electricCable3, 8), 400, 4000, 6.0, 2);
 
         SlimefunItem radiationabsorber = new RadiationAbsorber(group, radiationAbsorber, RecipeType.ENHANCED_CRAFTING_TABLE, radiationAbsorberRecipe, 250, 1600, 2);
         SlimefunItem radiationabsorber2 = new RadiationAbsorber(group, radiationAbsorber2, RecipeType.ENHANCED_CRAFTING_TABLE, radiationAbsorber2Recipe, 750, 3800, 4);
@@ -797,6 +865,9 @@ public class Setup {
         stackDispenserItem.register(plugin);
         playerHopperItem.register(plugin);
         supplyHopperItem.register(plugin);
+        electricCableItem.register(plugin);
+        electricCableItem2.register(plugin);
+        electricCableItem3.register(plugin);
 
         flameheartIdolItem.register(plugin);
         torrentIdolItem.register(plugin);
