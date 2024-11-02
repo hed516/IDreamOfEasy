@@ -812,8 +812,8 @@ public class Setup {
         SlimefunItem supplyHopperItem = new SupplyHopper(group, supplyHopper, RecipeType.MAGIC_WORKBENCH, supplyHopperRecipe, 500, 5000);
         SlimefunItem stackDispenserItem = new StackDispenser(group, stackDispenser, RecipeType.MAGIC_WORKBENCH, stackDispenserRecipe);
         SlimefunItem electricCableItem = new ElectricCable(group, electricCable, RecipeType.MAGIC_WORKBENCH, electricCableRecipe, IDOEUtility.output(electricCable, 8), 200, 2000, 2.0, 0.5);
-        SlimefunItem electricCableItem2 = new ElectricCable(group, electricCable2, RecipeType.MAGIC_WORKBENCH, electricCable2Recipe, IDOEUtility.output(electricCable2, 8), 300, 3000, 4.0, 1);
-        SlimefunItem electricCableItem3 = new ElectricCable(group, electricCable3, RecipeType.MAGIC_WORKBENCH, electricCable3Recipe, IDOEUtility.output(electricCable3, 8), 400, 4000, 6.0, 2);
+        SlimefunItem electricCableItem2 = new ElectricCable(group, electricCable2, RecipeType.MAGIC_WORKBENCH, electricCable2Recipe, IDOEUtility.output(electricCable2, 4), 300, 3000, 4.0, 1);
+        SlimefunItem electricCableItem3 = new ElectricCable(group, electricCable3, RecipeType.MAGIC_WORKBENCH, electricCable3Recipe, IDOEUtility.output(electricCable3, 2), 400, 4000, 6.0, 2);
 
         SlimefunItem radiationabsorber = new RadiationAbsorber(group, radiationAbsorber, RecipeType.ENHANCED_CRAFTING_TABLE, radiationAbsorberRecipe, 250, 1600, 2);
         SlimefunItem radiationabsorber2 = new RadiationAbsorber(group, radiationAbsorber2, RecipeType.ENHANCED_CRAFTING_TABLE, radiationAbsorber2Recipe, 750, 3800, 4);
