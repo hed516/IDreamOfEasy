@@ -16,6 +16,7 @@ import me.bunnky.idreamofeasy.utils.IDOEUtility;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -48,7 +49,6 @@ public class PlayerHopper extends SimpleSlimefunItem<BlockTicker> implements Ene
         this.ecost = ecost;
 
         addItemSetting(silent, toggleable);
-
         addItemHandler(new VanillaInventoryDropHandler<>(org.bukkit.block.Hopper.class));
     }
 
@@ -82,8 +82,8 @@ public class PlayerHopper extends SimpleSlimefunItem<BlockTicker> implements Ene
                 List<Player> players = (List<Player>) loc.getNearbyPlayers(xMax - xMin, yMax - yMin, zMax - zMin);
 
                 for (Player p : players) {
-                    if (!(Slimefun.getProtectionManager().hasPermission(p, b, Interaction.INTERACT_BLOCK))) {
-                        return;
+                    if (!(Slimefun.getProtectionManager().hasPermission(p, b, Interaction.INTERACT_BLOCK)) || p.getGameMode() == GameMode.SPECTATOR) {
+                        continue;
                     }
 
                     Location ploc = p.getLocation();
