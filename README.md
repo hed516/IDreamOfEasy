@@ -3,6 +3,8 @@
 ### I Dream of Easy is a Slimefun Addon that implements workable community suggestions as well as other random tools and machines.
 
 ## How it works
+> [!WARNING]
+> ### Requires latest Slimefun and Java 21!
 **Community-Driven Design**: This plugin tries to bring ideas from the Slimefun Discord community to life. Each feature has been developed based on user [#suggestions](https://discord.com/channels/565557184348422174/693130800853418055), creating a growing addon that evolves with player input. While some suggestions may not be possible, I do my best to find ways to bring similar ideas to life for everyone to enjoy.
 
 >[!IMPORTANT]
