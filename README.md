@@ -25,6 +25,7 @@
 > - **hellex7769** - "What would be nice is to have a machine that can strip all wood types for automating other machines." [Electric Log Stripper]
 > - **energized36** - "Add Electric Smokers and Blast Furnaces. (We have normal Electric Furnaces, why are Smokers and Blast Furnaces not a thing?)" [Electric Blast Furnace & Electric Smoker]
 > - **nyctophilio01** - "Add a obsidian boat to extra utilities, crafted like a oak boat but use obsidian and 1 electric motor; this item would be used to traverse over lava eazy" [Lava Boat]
+> - **cromecloridethecheese** - "Electric cable, that could damage players and mobs that touch it when powered. Recipe could be energy connector surrounded with chains." [Electric Cable]
 
 ## Items
 ### Tools
@@ -49,6 +50,7 @@ Idols are powerful, combined versions of Slimefun talismans that apply the same 
 - **Electric Smoker**: An electric version of the Smoker.
 - **Player Hopper**: A convenient drop-off point for players to store items easily. Standing on top of the Player Hopper will pull items out of your inventory, excluding armor and offhand items.
 - **Supply Hopper**: A convenient pickup point for players to retrieve items easily. Standing under the Supply Hopper will put items from the hopper into your inventory.
+- **Electric Cable**: A cable that deals damage to players and mobs upon contact when powered.
 - **Radiation Absorber**: Protect yourself from harmful radiation without the need of a Hazmat suit. This device absorbs radiation in a radius, granting players temporary immunity while powered.
 - **Stack Dispenser**: A dispenser that tries to automatically dispenses items in stacks.
 - **Mob Repellers**: Electric devices that prevent specific mobs from spawning in a chunk. Mobs include Bat, Creeper, Enderman, Skeleton, Slime, Spider, Witch, Zombie, and Zombie Villager.
