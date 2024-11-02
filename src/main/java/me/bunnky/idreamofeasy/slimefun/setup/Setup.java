@@ -21,6 +21,7 @@ import me.bunnky.idreamofeasy.slimefun.items.idols.DivineIdol;
 import me.bunnky.idreamofeasy.slimefun.items.idols.TorrentIdol;
 import me.bunnky.idreamofeasy.slimefun.machines.PlayerHopper;
 import me.bunnky.idreamofeasy.slimefun.machines.StackDispenser;
+import me.bunnky.idreamofeasy.slimefun.machines.SupplyHopper;
 import me.bunnky.idreamofeasy.slimefun.machines.repellers.BatRepeller;
 import me.bunnky.idreamofeasy.slimefun.machines.repellers.CreeperRepeller;
 import me.bunnky.idreamofeasy.slimefun.machines.repellers.EndermanRepeller;
@@ -110,6 +111,19 @@ public class Setup {
         //////////////////////////////////////////////
         ///////////////// MACHINES ///////////////////
         //////////////////////////////////////////////
+        SlimefunItemStack supplyHopper = new SlimefunItemStack(
+            "IDOE_HOPPER_SUPPLY",
+            Material.HOPPER,
+            "&aSupply Hopper",
+            "",
+            "&fStand under this to automatically",
+            "&fpush items to your inventory",
+            "",
+            "",
+            LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
+            LoreBuilder.powerPerSecond(250)
+        );
+
         SlimefunItemStack playerHopper = new SlimefunItemStack(
             "IDOE_HOPPER_PLAYER",
             Material.HOPPER,
@@ -523,6 +537,12 @@ public class Setup {
             SlimefunItems.INFUSED_MAGNET, SlimefunItems.EARTH_RUNE, SlimefunItems.ENERGY_CONNECTOR
         };
 
+        ItemStack[] supplyHopperRecipe = {
+            SlimefunItems.ENERGY_CONNECTOR, SlimefunItems.EARTH_RUNE, SlimefunItems.INFUSED_MAGNET,
+            SlimefunItems.ENDER_RUNE, new ItemStack(Material.DROPPER), SlimefunItems.ENDER_RUNE,
+            SlimefunItems.INFUSED_MAGNET, SlimefunItems.EARTH_RUNE, SlimefunItems.ENERGY_CONNECTOR
+        };
+
         ItemStack[] stackDispenserRecipe = {
             SlimefunItems.STEEL_PLATE, SlimefunItems.BATTERY, SlimefunItems.STEEL_PLATE,
             SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BLOCK_PLACER, SlimefunItems.ELECTRIC_MOTOR,
@@ -724,6 +744,7 @@ public class Setup {
         //########################
 
         SlimefunItem playerHopperItem = new PlayerHopper(group, playerHopper, RecipeType.MAGIC_WORKBENCH, playerHopperRecipe, 500, 5000);
+        SlimefunItem supplyHopperItem = new SupplyHopper(group, supplyHopper, RecipeType.MAGIC_WORKBENCH, supplyHopperRecipe, 500, 5000);
         SlimefunItem stackDispenserItem = new StackDispenser(group, stackDispenser, RecipeType.MAGIC_WORKBENCH, stackDispenserRecipe);
 
         SlimefunItem radiationabsorber = new RadiationAbsorber(group, radiationAbsorber, RecipeType.ENHANCED_CRAFTING_TABLE, radiationAbsorberRecipe, 250, 1600, 2);
@@ -775,6 +796,7 @@ public class Setup {
 
         stackDispenserItem.register(plugin);
         playerHopperItem.register(plugin);
+        supplyHopperItem.register(plugin);
 
         flameheartIdolItem.register(plugin);
         torrentIdolItem.register(plugin);
