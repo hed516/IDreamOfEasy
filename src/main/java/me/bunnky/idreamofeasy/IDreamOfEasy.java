@@ -1,8 +1,7 @@
 package me.bunnky.idreamofeasy;
 
-import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
+import io.papermc.lib.PaperLib;
 import me.bunnky.idreamofeasy.slimefun.listener.IdolListener;
 import me.bunnky.idreamofeasy.slimefun.listener.MagnetoidListener;
 import me.bunnky.idreamofeasy.slimefun.setup.Setup;
@@ -19,6 +18,9 @@ public class IDreamOfEasy extends JavaPlugin implements SlimefunAddon {
     private final String username;
     private final String repo;
 
+    private static final int MAJOR = 20;
+    private static final int PATCH = 6;
+
     public IDreamOfEasy() {
         this.username = "Bunnky";
         this.repo = "IDreamOfEasy";
@@ -28,9 +30,15 @@ public class IDreamOfEasy extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         instance = this;
 
-        if (!Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_20)) {
-            getLogger().warning("IDOE requires version 1.20+");
+        int version = PaperLib.getMinecraftVersion();
+        int patchVersion = PaperLib.getMinecraftPatchVersion();
+
+        if (version != MAJOR || patchVersion != PATCH) {
+            getLogger().severe("###############################################");
+            getLogger().severe(STR."# IDOE only supports Minecraft version 1.\{MAJOR}.\{PATCH} #");
+            getLogger().severe("###############################################");
             getServer().getPluginManager().disablePlugin(this);
+            return;
         }
 
         getLogger().info(" ┳  ┳┓┳┓┏┓┏┓┳┳┓  ┏┓┏┓  ┏┓┏┓┏┓┓┏ ");
