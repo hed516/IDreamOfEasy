@@ -14,7 +14,7 @@
 > - **inaxtrawetrust** - "A machine that stops Radiation damage in an area" [Radiation Absorber]
 >    - Note: This was also designed because of so many reports of Radiation griefing!
 > - **林alguém林 有人** - "Biome finding compass a compass that points to the direction of a biome you choose on it, every biome has a different cost like xp or idk what item" [Biome Compass]
-> - **Marvi444[Ger]** - "a player hopper. works like a normal hopper but it puts its items in your inventory instead when you stand under it" [Player Hopper]
+> - **Marvi444[Ger]** - "a player hopper. works like a normal hopper but it puts its items in your inventory instead when you stand under it" [Player Hopper],[Supply Hopper]
 > - **JustAHuman** - "Create A Slime Totem of sorts that when constructed (if its a multiblock) or placed (if its a player head) inside of a slime chunk No slimes will spawn in it, could also have one that does the opposite and causes a chunk to spawn slimes" - [Mob Repeller]
 >    - Note: I haven't added the second part of the suggestion, however I've extended the idea to other mobs!
 > - **AverageUnusualUser** - "Shift + Right clicking while holding infused magnet will toggle "Shift" and "Always" mode, "shift" mode is the infused magnet we know, "always" mode will always attract nearby items without having to press shift as long as the infused magnet is in the inventory, or maybe made it into a separate item in a addon, could be usefull for clearing large area of items without having to slow down because of sneaking" [Magnetoid]
@@ -48,6 +48,7 @@ Idols are powerful, combined versions of Slimefun talismans that apply the same 
 - **Electric Log Stripper**: Transforms logs into stripped wood.
 - **Electric Smoker**: An electric version of the Smoker.
 - **Player Hopper**: A convenient drop-off point for players to store items easily. Standing on top of the Player Hopper will pull items out of your inventory, excluding armor and offhand items.
+- **Supply Hopper**: A convenient pickup point for players to retrieve items easily. Standing under the Supply Hopper will put items from the hopper into your inventory.
 - **Radiation Absorber**: Protect yourself from harmful radiation without the need of a Hazmat suit. This device absorbs radiation in a radius, granting players temporary immunity while powered.
 - **Stack Dispenser**: A dispenser that tries to automatically dispenses items in stacks.
 - **Mob Repellers**: Electric devices that prevent specific mobs from spawning in a chunk. Mobs include Bat, Creeper, Enderman, Skeleton, Slime, Spider, Witch, Zombie, and Zombie Villager.
