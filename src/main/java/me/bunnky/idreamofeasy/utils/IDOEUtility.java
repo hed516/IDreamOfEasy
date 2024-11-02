@@ -18,6 +18,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -204,5 +205,11 @@ public class IDOEUtility {
             type == Material.WITHER_SKELETON_WALL_SKULL;
     }
 
+    @Nonnull
+    public static ItemStack output(@Nonnull ItemStack itemStack, int amount) {
+        ItemStack item = itemStack.clone();
+        item.setAmount(amount);
+        return item;
+    }
 
 }
