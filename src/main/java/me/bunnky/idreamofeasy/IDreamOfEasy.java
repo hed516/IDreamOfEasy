@@ -2,8 +2,8 @@ package me.bunnky.idreamofeasy;
 
 import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
 import io.papermc.lib.PaperLib;
-import me.bunnky.idreamofeasy.slimefun.listener.IdolListener;
-import me.bunnky.idreamofeasy.slimefun.listener.MagnetoidListener;
+import me.bunnky.idreamofeasy.listeners.IdolListener;
+import me.bunnky.idreamofeasy.listeners.MagnetoidListener;
 import me.bunnky.idreamofeasy.slimefun.setup.Setup;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -35,7 +35,7 @@ public class IDreamOfEasy extends JavaPlugin implements SlimefunAddon {
 
         if (version != MAJOR || patchVersion != PATCH) {
             getLogger().severe("###############################################");
-            getLogger().severe(STR."# IDOE only supports Minecraft version 1.\{MAJOR}.\{PATCH} #");
+            getLogger().severe("# IDOE only supports Minecraft version 1." + MAJOR + "." + PATCH + " #");
             getLogger().severe("###############################################");
             getServer().getPluginManager().disablePlugin(this);
             return;
