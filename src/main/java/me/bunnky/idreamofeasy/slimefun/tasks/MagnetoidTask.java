@@ -3,7 +3,7 @@ package me.bunnky.idreamofeasy.slimefun.tasks;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.bunnky.idreamofeasy.IDreamOfEasy;
 import me.bunnky.idreamofeasy.slimefun.items.Magnetoid;
-import me.bunnky.idreamofeasy.slimefun.listener.MagnetoidListener;
+import me.bunnky.idreamofeasy.listeners.MagnetoidListener;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Sound;

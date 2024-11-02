@@ -1,4 +1,4 @@
-package me.bunnky.idreamofeasy.slimefun.listener;
+package me.bunnky.idreamofeasy.listeners;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import me.bunnky.idreamofeasy.IDreamOfEasy;
