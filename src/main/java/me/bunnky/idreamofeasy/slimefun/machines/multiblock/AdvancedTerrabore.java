@@ -32,10 +32,10 @@ public class AdvancedTerrabore extends IndustrialMiner {
     }
 
     @Override
-    public boolean canMine(@NotNull Block block) {
-        return !SlimefunTag.INDUSTRIAL_MINER_ORES.isTagged(block.getType()) &&
-            block.getType().getHardness() >= 0 &&
-            block.getType().isSolid() &&
-            !BlockStorage.hasBlockInfo(block);
+    public boolean canMine(@NotNull Block b) {
+        return !SlimefunTag.INDUSTRIAL_MINER_ORES.isTagged(b.getType()) &&
+            b.getType().getHardness() >= 0 &&
+            b.getType().isSolid() &&
+            !BlockStorage.hasBlockInfo(b);
     }
 }
