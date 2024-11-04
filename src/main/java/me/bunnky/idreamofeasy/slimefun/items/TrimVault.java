@@ -36,16 +36,16 @@ public class TrimVault extends SlimefunItem  {
             public void onPlayerPlace(@NotNull BlockPlaceEvent e) {
                 Location placedLocation = e.getBlock().getLocation();
 
-                World world = placedLocation.getWorld();
+                World w = placedLocation.getWorld();
 
-                if (world != null) {
-                    world.spawnParticle(Particle.EGG_CRACK, placedLocation.add(0.5, 0.5, 0.5), 30, 0.3, 0.3, 0.3, 0.05);
+                if (w != null) {
+                    w.spawnParticle(Particle.EGG_CRACK, placedLocation.add(0.5, 0.5, 0.5), 30, 0.3, 0.3, 0.3, 0.05);
                 }
             }
         });
         addItemHandler(new BlockBreakHandler(false, true) {
             @Override
-            public void onPlayerBreak(BlockBreakEvent e, ItemStack stack, List<ItemStack> list) {
+            public void onPlayerBreak(@NotNull BlockBreakEvent e, @NotNull ItemStack stack, @NotNull List<ItemStack> list) {
 
                 Player p = e.getPlayer();
                 ItemStack randTemp = IDOEUtility.getRandomTemplate();
@@ -58,7 +58,7 @@ public class TrimVault extends SlimefunItem  {
     }
 
     @Override
-    public Collection<ItemStack> getDrops() {
+    public @NotNull Collection<ItemStack> getDrops() {
         return List.of(new ItemStack(Material.AIR));
     }
 }

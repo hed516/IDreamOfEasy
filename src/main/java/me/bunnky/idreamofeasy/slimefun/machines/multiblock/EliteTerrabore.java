@@ -32,9 +32,9 @@ public class EliteTerrabore extends IndustrialMiner {
     }
 
     @Override
-    public boolean canMine(@NotNull Block block) {
-        return block.getType().getHardness() >= 0 &&
-            block.getType().isSolid() &&
-            !BlockStorage.hasBlockInfo(block);
+    public boolean canMine(@NotNull Block b) {
+        return b.getType().getHardness() >= 0 &&
+            b.getType().isSolid() &&
+            !BlockStorage.hasBlockInfo(b);
     }
 }

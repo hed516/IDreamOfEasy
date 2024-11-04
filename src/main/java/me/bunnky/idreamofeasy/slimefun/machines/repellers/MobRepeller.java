@@ -81,8 +81,8 @@ public abstract class MobRepeller extends SlimefunItem implements Listener, Ener
         addItemHandler(new BlockPlaceHandler(false) {
             @Override
             public void onPlayerPlace(@NotNull BlockPlaceEvent blockPlaceEvent) {
-                Block block = blockPlaceEvent.getBlock();
-                Chunk chunk = block.getChunk();
+                Block b = blockPlaceEvent.getBlock();
+                Chunk chunk = b.getChunk();
 
                 String chunkKey = getChunkKey(chunk);
                 repellerChunks.add(chunkKey);
@@ -93,9 +93,9 @@ public abstract class MobRepeller extends SlimefunItem implements Listener, Ener
 
         addItemHandler(new BlockBreakHandler(false, false) {
             @Override
-            public void onPlayerBreak(BlockBreakEvent blockBreakEvent, ItemStack itemStack, List<ItemStack> list) {
-                Block block = blockBreakEvent.getBlock();
-                Chunk chunk = block.getChunk();
+            public void onPlayerBreak(@NotNull BlockBreakEvent blockBreakEvent, @NotNull ItemStack itemStack, @NotNull List<ItemStack> list) {
+                Block b = blockBreakEvent.getBlock();
+                Chunk chunk = b.getChunk();
 
                 String chunkKey = getChunkKey(chunk);
                 repellerChunks.remove(chunkKey);
@@ -115,13 +115,13 @@ public abstract class MobRepeller extends SlimefunItem implements Listener, Ener
     }
 
     @EventHandler
-    public void onCreatureSpawn(CreatureSpawnEvent event) {
-        if (event.getEntityType() == getRepelledEntityType()) {
-            Chunk chunk = event.getLocation().getChunk();
+    public void onCreatureSpawn(CreatureSpawnEvent e) {
+        if (e.getEntityType() == getRepelledEntityType()) {
+            Chunk chunk = e.getLocation().getChunk();
             String chunkKey = getChunkKey(chunk);
 
             if (repellerChunks.contains(chunkKey)) {
-                event.setCancelled(true);
+                e.setCancelled(true);
             }
         }
     }

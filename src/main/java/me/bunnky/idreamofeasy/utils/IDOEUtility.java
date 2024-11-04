@@ -186,8 +186,8 @@ public class IDOEUtility {
         }
     }
 
-    public static boolean isHead(Block block) {
-        Material type = block.getType();
+    public static boolean isHead(Block b) {
+        Material type = b.getType();
 
         return type == Material.PLAYER_HEAD ||
             type == Material.PLAYER_WALL_HEAD ||

@@ -94,12 +94,12 @@ public class ElectricCable extends SlimefunItem implements EnergyNetComponent {
                     if (entity.getType() == EntityType.ITEM) {
                         continue;
                     }
-                    if (entity instanceof Player player) {
-                        if (player.getGameMode() == GameMode.SURVIVAL) {
-                            if (ownerUUID != null && player.getUniqueId().toString().equals(ownerUUID)) {
+                    if (entity instanceof Player p) {
+                        if (p.getGameMode() == GameMode.SURVIVAL) {
+                            if (ownerUUID != null && p.getUniqueId().toString().equals(ownerUUID)) {
                                 continue;
                             }
-                            damage(loc, player);
+                            damage(loc, p);
                         }
                     } else {
                         damage(loc, entity);

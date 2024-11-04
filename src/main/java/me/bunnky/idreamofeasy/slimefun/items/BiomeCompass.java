@@ -97,7 +97,7 @@ public class BiomeCompass extends SimpleSlimefunItem<ItemUseHandler> {
         p.spawnParticle(Particle.EFFECT, p.getLocation().add(0.5, 0.5, 0.5), 30, 0.3, 0.3, 0.3, 0.05);
     }
 
-    private Location findClosestBiome(Player player, Location playerLocation, Biome targetBiome) {
+    private Location findClosestBiome(Player p, Location playerLocation, Biome targetBiome) {
         List<Location> foundLocations = new ArrayList<>();
         int radius = r.getValue();
 
@@ -115,13 +115,13 @@ public class BiomeCompass extends SimpleSlimefunItem<ItemUseHandler> {
 
         if (!foundLocations.isEmpty()) {
             Location closestNewBiome = foundLocations.get(0);
-            Map<Biome, List<Location>> playerCache = playerBiomeCache.computeIfAbsent(player, k -> new HashMap<>());
+            Map<Biome, List<Location>> playerCache = playerBiomeCache.computeIfAbsent(p, k -> new HashMap<>());
             playerCache.computeIfAbsent(targetBiome, k -> new ArrayList<>()).add(closestNewBiome);
 
             return closestNewBiome;
         }
 
-        Map<Biome, List<Location>> playerCache = playerBiomeCache.computeIfAbsent(player, k -> new HashMap<>());
+        Map<Biome, List<Location>> playerCache = playerBiomeCache.computeIfAbsent(p, k -> new HashMap<>());
         List<Location> cachedLocations = playerCache.get(targetBiome);
 
         if (cachedLocations != null) {

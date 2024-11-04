@@ -26,15 +26,15 @@ public abstract class Idol extends SlimefunItem {
         idols.add(this);
 
         addItemHandler((ItemUseHandler) e -> {
-            Player player = e.getPlayer();
+            Player p = e.getPlayer();
             messagingEnabled = !messagingEnabled;
 
             String idolName = this.getItemName();
 
             if (messagingEnabled) {
-                player.sendMessage(IDOEUtility.PREFIX + idolName + " §amessages are now enabled");
+                p.sendMessage(IDOEUtility.PREFIX + idolName + " §amessages are now enabled");
             } else {
-                player.sendMessage(IDOEUtility.PREFIX + idolName + " §cmessages are now disabled");
+                p.sendMessage(IDOEUtility.PREFIX + idolName + " §cmessages are now disabled");
             }
         });
     }
@@ -67,9 +67,9 @@ public abstract class Idol extends SlimefunItem {
         return false;
     }
 
-    protected void sendMessage(Player player, String message) {
+    protected void sendMessage(Player p, String message) {
         if (messagingEnabled) {
-            player.sendActionBar(Component.text(IDOEUtility.PREFIX + message));
+            p.sendActionBar(Component.text(IDOEUtility.PREFIX + message));
         }
     }
 }
