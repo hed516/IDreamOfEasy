@@ -9,16 +9,17 @@
 
 >[!IMPORTANT]
 > Some items have configuration options for Admins. I highly suggest looking over the `items.yml` once installed to see what kind of options are available. Since IDoE might not suit every server, be sure to configure the plugin to meet your specific needs!
-## Special thanks to the people who made suggestions!
+<details>
+<summary><h2>Special thanks to the people who made suggestions!</h2></summary>
 
 > - **inaxtrawetrust** - "A machine that stops Radiation damage in an area" [Radiation Absorber]
->    - Note: This was also designed because of so many reports of Radiation griefing!
+    >    - Note: This was also designed because of so many reports of Radiation griefing!
 > - **林alguém林 有人** - "Biome finding compass a compass that points to the direction of a biome you choose on it, every biome has a different cost like xp or idk what item" [Biome Compass]
 > - **Marvi444[Ger]** - "a player hopper. works like a normal hopper but it puts its items in your inventory instead when you stand under it" [Player Hopper],[Supply Hopper]
 > - **JustAHuman** - "Create A Slime Totem of sorts that when constructed (if its a multiblock) or placed (if its a player head) inside of a slime chunk No slimes will spawn in it, could also have one that does the opposite and causes a chunk to spawn slimes" - [Mob Repeller]
->    - Note: I haven't added the second part of the suggestion, however I've extended the idea to other mobs!
+    >    - Note: I haven't added the second part of the suggestion, however I've extended the idea to other mobs!
 > - **AverageUnusualUser** - "Shift + Right clicking while holding infused magnet will toggle "Shift" and "Always" mode, "shift" mode is the infused magnet we know, "always" mode will always attract nearby items without having to press shift as long as the infused magnet is in the inventory, or maybe made it into a separate item in a addon, could be usefull for clearing large area of items without having to slow down because of sneaking" [Magnetoid]
->    - Note: The Magnetoid was designed previously by me for STB. It's functionality compared to the Infused Magnet was too good to not re-design!
+    >    - Note: The Magnetoid was designed previously by me for STB. It's functionality compared to the Infused Magnet was too good to not re-design!
 > - **deserdoo** - "Add a recipe for the 1.20 armor trims. Currently the only way to upgrade your armor to netherite is to find a netherite armor upgrade in a bastion chest. Add some way to craft the upgrade, maybe with magic stuff like a fire rune" [Trim Vault]
 > - **oah** - "Ender talismans take up a ton of room in the enderchest, how about a 'multiEnderTalisman'?" [Idols]
 > - **elitemastereric** - "A variant of the Industrial Miner, which targets all stone and dirt as well as ores. This would essentially allow it to act as a full quarry, which clears out an area until reaching bedrock." [Terrabore]
@@ -26,6 +27,13 @@
 > - **energized36** - "Add Electric Smokers and Blast Furnaces. (We have normal Electric Furnaces, why are Smokers and Blast Furnaces not a thing?)" [Electric Blast Furnace & Electric Smoker]
 > - **nyctophilio01** - "Add a obsidian boat to extra utilities, crafted like a oak boat but use obsidian and 1 electric motor; this item would be used to traverse over lava eazy" [Lava Boat]
 > - **cromecloridethecheese** - "Electric cable, that could damage players and mobs that touch it when powered. Recipe could be energy connector surrounded with chains." [Electric Cable]
+> - **TheBusyBiscuit** - "An electric machine that automatically shears sheep in a small radius." [Electric Shearer]
+> - **kohlth** - "chisel: right click any block with pillar/chiseled forms to swap between its chiseled, pillar, smooth, and normal forms (basically a portable stone cutter?)" [Chisel]
+> - **TheBusyBiscuit** - "An Electric Explosive Pickaxe that consumes power instead of durability." [Electric Explosive Pickaxe/Shovel]
+> - **bird** - "Potion of Bad Omen: Drink to acquire one level of Bad Omen. Could even require an ominous banner to craft. Useful for when there is no/inaccessible outpost and patrols are hard to come by." [Bad Omen Potion]
+    >    -  Note: I did not use the Ominous Banner as an ingrediant due to complications with banner "designing" for recipe usage.
+> - **punished_Garett** - "Make notch apple be craftable in advanced crafting table (multiblock: crafting table on dispenser)." [Enchanted Golden Apple]
+</details>
 
 ## Items
 ### Tools
@@ -35,6 +43,10 @@
 - **Magnetoid**: An offhand device that attracts nearby items to itself, similarly to the Infused Magnet. Configurable radius.
 - **Trim Vault**: A crafted block that players can place and break to obtain a Trim item. Includes Netherite Smithing template.
 - **Wister Shears**: The Wister Shears can shear certain mobs and efficiently clear leaves from trees, grass, and other foliage. When used on a mob, it provides unique drops based on the creature.
+- **Chisel**: A tool to Chisel certain blocks, changing their form instantly. Mostly based off Stone cutter recipes.
+- **Electric Pickaxe and Shovel**: Electric versions of the Explosive Pickaxe and Shovel. Stops working if there is no charge.
+- **Bad Omen Potion**: A craftable potion that gives the Bad Omen effect. Useful if Pillager Outposts aren't reachable.
+- **Enchanted Golden Apple**: A craftable Notch apple.
 ### Idols
 Idols are powerful, combined versions of Slimefun talismans that apply the same effects as the talismans used to create them. They only work from your inventory—Ender Chest compatibility isn’t available yet! Idols are fireproof and never consumed.
 - **Flameheart**: The Flameheart Idol provides benefits in combat and fire-related situations. When the player is in contact with lava or fire, there is a 20% chance to gain Fire Resistance for 10 seconds. Additionally, when attacked by non-player entities, the Flameheart Idol offers a 20% chance to grant Strength III for 10 seconds, and a 30% chance to grant Regeneration I for 5 seconds.
@@ -48,6 +60,7 @@ Idols are powerful, combined versions of Slimefun talismans that apply the same 
 - **Electric Blast Furnace**: An electric version of the Blast Furnace.
 - **Electric Log Stripper**: Transforms logs into stripped wood.
 - **Electric Smoker**: An electric version of the Smoker.
+- **Electric Shearer**: A machine that automatically shears sheep nearby. Range: 4
 - **Player Hopper**: A convenient drop-off point for players to store items easily. Standing on top of the Player Hopper will pull items out of your inventory, excluding armor and offhand items.
 - **Supply Hopper**: A convenient pickup point for players to retrieve items easily. Standing under the Supply Hopper will put items from the hopper into your inventory.
 - **Electric Cable**: A cable that deals damage to players and mobs upon contact when powered.

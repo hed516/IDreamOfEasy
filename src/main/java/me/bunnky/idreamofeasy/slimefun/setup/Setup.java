@@ -12,6 +12,9 @@ import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import lombok.experimental.UtilityClass;
 import me.bunnky.idreamofeasy.IDreamOfEasy;
 import me.bunnky.idreamofeasy.slimefun.items.BiomeCompass;
+import me.bunnky.idreamofeasy.slimefun.items.Chisel;
+import me.bunnky.idreamofeasy.slimefun.items.ElectricExplosivePickaxe;
+import me.bunnky.idreamofeasy.slimefun.items.ElectricExplosiveShovel;
 import me.bunnky.idreamofeasy.slimefun.items.idols.TerranIdol;
 import me.bunnky.idreamofeasy.slimefun.items.idols.FlameheartIdol;
 import me.bunnky.idreamofeasy.slimefun.items.Jawn;
@@ -20,6 +23,7 @@ import me.bunnky.idreamofeasy.slimefun.items.Magnetoid;
 import me.bunnky.idreamofeasy.slimefun.items.idols.DivineIdol;
 import me.bunnky.idreamofeasy.slimefun.items.idols.TorrentIdol;
 import me.bunnky.idreamofeasy.slimefun.machines.ElectricCable;
+import me.bunnky.idreamofeasy.slimefun.machines.ElectricShearer;
 import me.bunnky.idreamofeasy.slimefun.machines.PlayerHopper;
 import me.bunnky.idreamofeasy.slimefun.machines.StackDispenser;
 import me.bunnky.idreamofeasy.slimefun.machines.SupplyHopper;
@@ -42,11 +46,14 @@ import me.bunnky.idreamofeasy.slimefun.machines.repellers.WitchRepeller;
 import me.bunnky.idreamofeasy.slimefun.machines.repellers.ZombieRepeller;
 import me.bunnky.idreamofeasy.slimefun.machines.repellers.ZombieVillagerRepeller;
 import me.bunnky.idreamofeasy.utils.IDOEUtility;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 @UtilityClass
 public class Setup {
@@ -318,6 +325,17 @@ public class Setup {
             LoreBuilder.powerPerSecond(120)
         );
 
+        SlimefunItemStack electricShearer = new SlimefunItemStack(
+            "IDOE_ELECTRIC_SHEARER",
+            Material.LOOM,
+            "&aElectric Shearer",
+            "",
+            LoreBuilder.range(4),
+            "",
+            LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE),
+            LoreBuilder.powerPerSecond(120)
+        );
+
         SlimefunItemStack zombieRepeller = new SlimefunItemStack(
             "IDOE_REPELLER_ZOMBIE",
             REPELLER,
@@ -496,6 +514,48 @@ public class Setup {
         wistermeta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         wisterShears.setItemMeta(wistermeta);
 
+        SlimefunItemStack chisel = new SlimefunItemStack(
+            "IDOE_CHISEL",
+            Material.POINTED_DRIPSTONE,
+            "&aChisel",
+            "",
+            "&fChanges some blocks to",
+            "&ftheir chiseled form",
+            "",
+            LoreBuilder.powerCharged(0, 250),
+            "",
+            LoreBuilder.RIGHT_CLICK_TO_USE
+        );
+
+        SlimefunItemStack electricPick = new SlimefunItemStack(
+            "IDOE_ELECTRIC_EXPLOSIVE_PICKAXE",
+            Material.DIAMOND_PICKAXE,
+            "&aElectric Explosive Pickaxe",
+            "",
+            "&fAn electric explosive pickaxe",
+            "",
+            LoreBuilder.powerCharged(0, 700)
+        );
+        ItemMeta pickMeta = electricPick.getItemMeta();
+        pickMeta.setUnbreakable(true);
+        pickMeta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        electricPick.setItemMeta(pickMeta);
+
+        SlimefunItemStack electricShovel = new SlimefunItemStack(
+            "IDOE_ELECTRIC_EXPLOSIVE_SHOVEL",
+            Material.DIAMOND_SHOVEL,
+            "&aElectric Explosive Shovel",
+            "",
+            "&fAn electric explosive shovel",
+            "",
+            LoreBuilder.powerCharged(0, 900)
+        );
+
+        ItemMeta shovelMeta = electricShovel.getItemMeta();
+        shovelMeta.setUnbreakable(true);
+        shovelMeta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        electricShovel.setItemMeta(shovelMeta);
+
         SlimefunItemStack biomeCompass = new SlimefunItemStack(
             "IDOE_BIOMECOMPASS",
             Material.COMPASS,
@@ -571,6 +631,19 @@ public class Setup {
             "&cFireproof"
         );
 
+        SlimefunItemStack enchantedGoldenApple = new SlimefunItemStack(
+            "IDOE_ENCHANTED_GOLDEN_APPLE",
+            new ItemStack(Material.ENCHANTED_GOLDEN_APPLE)
+        );
+
+        SlimefunItemStack badOmenPotion = new SlimefunItemStack(
+            "IDOE_POTION_BAD_OMEN",
+            Color.BLACK,
+            new PotionEffect(PotionEffectType.BAD_OMEN, 6000, 0),
+            "&aPotion of Bad Omen"
+        );
+        IDOEUtility.setGlow(badOmenPotion);
+
         //########################
         //  RECIPES
         //########################
@@ -632,7 +705,6 @@ public class Setup {
             SlimefunItems.REINFORCED_PLATE, SlimefunItems.NETHER_ICE_COOLANT_CELL, SlimefunItems.REINFORCED_PLATE
         };
 
-
         ItemStack[] electricBlastFurnaceRecipe = {
             null, SlimefunItems.BATTERY, null,
             SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.BLAST_FURNACE), SlimefunItems.ELECTRIC_MOTOR,
@@ -685,6 +757,12 @@ public class Setup {
             SlimefunItems.LUMBER_AXE, SlimefunItems.BATTERY, null,
             SlimefunItems.ELECTRIC_MOTOR, electricLogStripper2, SlimefunItems.ELECTRIC_MOTOR,
             SlimefunItems.COPPER_WIRE, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.COPPER_WIRE
+        };
+
+        ItemStack[] electricShererRecipe = {
+            SlimefunItems.SOLAR_PANEL, SlimefunItems.BATTERY, SlimefunItems.SOLAR_PANEL,
+            SlimefunItems.GOLD_22K, new ItemStack(Material.SHEARS), SlimefunItems.GOLD_22K,
+            SlimefunItems.GOLD_22K, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.GOLD_22K
         };
 
         ItemStack[] zombieRepellerRecipe = {
@@ -780,6 +858,28 @@ public class Setup {
             new ItemStack(Material.CRIMSON_FUNGUS), new ItemStack(Material.SCULK), new ItemStack(Material.END_STONE)
         };
 
+        ItemStack[] chiselRecipe = {
+            SlimefunItems.ALUMINUM_BRASS_INGOT, null, SlimefunItems.ALUMINUM_BRASS_INGOT,
+            SlimefunItems.ALUMINUM_BRASS_INGOT, SlimefunItems.MEDIUM_CAPACITOR, SlimefunItems.ALUMINUM_BRASS_INGOT,
+            null, SlimefunItems.ALUMINUM_BRASS_INGOT, null,
+        };
+
+        ItemStack[] electricPickRecipe = {
+            SlimefunItems.SYNTHETIC_DIAMOND, SlimefunItems.EXPLOSIVE_PICKAXE, SlimefunItems.SYNTHETIC_DIAMOND,
+            null, SlimefunItems.BIG_CAPACITOR, null,
+            null, SlimefunItems.SYNTHETIC_DIAMOND, null,
+        };
+
+        ItemStack[] electricShovelRecipe = {
+            null, SlimefunItems.EXPLOSIVE_SHOVEL, null,
+            null, SlimefunItems.BIG_CAPACITOR, null,
+            null, SlimefunItems.SYNTHETIC_DIAMOND, null,
+        };
+
+
+        //////////////////////////////////////////////
+        /////////////////// IDOLS ////////////////////
+        //////////////////////////////////////////////
         ItemStack[] flamheartIdolRecipe = {
             SlimefunItem.getById("ENDER_LAVA_TALISMAN").getItem(), SlimefunItems.TALISMAN_LAVA, SlimefunItem.getById("ENDER_WARRIOR_TALISMAN").getItem(),
             SlimefunItems.TALISMAN_WARRIOR, SlimefunItems.BOOSTED_URANIUM, SlimefunItems.TALISMAN_KNIGHT,
@@ -802,6 +902,18 @@ public class Setup {
             SlimefunItem.getById("ENDER_MAGICIAN_TALISMAN").getItem(), SlimefunItems.TALISMAN_MAGICIAN, SlimefunItem.getById("ENDER_WIZARD_TALISMAN").getItem(),
             SlimefunItems.TALISMAN_WIZARD, SlimefunItems.BOOSTED_URANIUM, SlimefunItems.TALISMAN_WISE,
             SlimefunItem.getById("ENDER_WISE_TALISMAN").getItem(), SlimefunItems.TALISMAN_ANVIL, SlimefunItem.getById("ENDER_ANVIL_TALISMAN").getItem()
+        };
+
+        ItemStack[] enchantedGoldenAppleRecipe = {
+            SlimefunItems.GOLD_24K_BLOCK, SlimefunItems.GOLD_24K_BLOCK, SlimefunItems.GOLD_24K_BLOCK,
+            SlimefunItems.GOLD_24K_BLOCK, new ItemStack(Material.APPLE), SlimefunItems.GOLD_24K_BLOCK,
+            SlimefunItems.GOLD_24K_BLOCK, SlimefunItems.GOLD_24K_BLOCK, SlimefunItems.GOLD_24K_BLOCK
+        };
+
+        ItemStack[] badOmenPotionRecipe = {
+            null, new ItemStack(Material.FERMENTED_SPIDER_EYE), null,
+            new ItemStack(Material.POISONOUS_POTATO), SlimefunItems.MEDICINE, new ItemStack(Material.GHAST_TEAR),
+            null, new ItemStack(Material.NETHER_WART), null,
         };
 
         //########################
@@ -831,6 +943,8 @@ public class Setup {
         SlimefunItem electricLogStripperItem2 = new ElectricLogStripper(group, electricLogStripper2, RecipeType.ENHANCED_CRAFTING_TABLE, electricLogStripperRecipe2).setCapacity(1024).setEnergyConsumption(48).setProcessingSpeed(4);
         SlimefunItem electricLogStripperItem3 = new ElectricLogStripper(group, electricLogStripper3, RecipeType.ENHANCED_CRAFTING_TABLE, electricLogStripperRecipe3).setCapacity(1024).setEnergyConsumption(60).setProcessingSpeed(8);
 
+        SlimefunItem electricShearerItem = new ElectricShearer(group, electricShearer, RecipeType.ENHANCED_CRAFTING_TABLE, electricShererRecipe, 120, 1024, 4);
+
         SlimefunItem zombieRepellerItem = new ZombieRepeller(group, zombieRepeller, RecipeType.ENHANCED_CRAFTING_TABLE, zombieRepellerRecipe, 250, 1200);
         SlimefunItem spiderRepellerItem = new SpiderRepeller(group, spiderRepeller, RecipeType.ENHANCED_CRAFTING_TABLE, spiderRepellerRecipe, 250, 1200);
         SlimefunItem skeletonRepellerItem = new SkeletonRepeller(group, skeletonRepeller, RecipeType.ENHANCED_CRAFTING_TABLE, skeletonRepellerRecipe, 250, 1200);
@@ -847,12 +961,17 @@ public class Setup {
         SlimefunItem trimVaultItem = new TrimVault(group, trimVault, RecipeType.MAGIC_WORKBENCH, trimVaultRecipe);
         SlimefunItem wisterShearsItem = new WisterShears(group, wisterShears, RecipeType.MAGIC_WORKBENCH, wisterShearsRecipe);
         SlimefunItem biomeCompassItem = new BiomeCompass(group, biomeCompass, RecipeType.MAGIC_WORKBENCH, biomeCompassRecipe);
+        SlimefunItem chiselItem = new Chisel(group, chisel, RecipeType.MAGIC_WORKBENCH, chiselRecipe, 250);
+        SlimefunItem electricPickItem = new ElectricExplosivePickaxe(group, electricPick, RecipeType.MAGIC_WORKBENCH, electricPickRecipe, 700);
+        SlimefunItem electricShovelItem = new ElectricExplosiveShovel(group, electricShovel, RecipeType.MAGIC_WORKBENCH, electricShovelRecipe, 900);
+
+        SlimefunItem enchantedGoldenAppleItem = new SlimefunItem(group, enchantedGoldenApple, RecipeType.ANCIENT_ALTAR, enchantedGoldenAppleRecipe);
+        SlimefunItem badOmenPotionItem = new SlimefunItem(group, badOmenPotion, RecipeType.JUICER, badOmenPotionRecipe);
 
         SlimefunItem flameheartIdolItem = new FlameheartIdol(group, flameheartIdol, RecipeType.MAGIC_WORKBENCH, flamheartIdolRecipe);
         SlimefunItem torrentIdolItem = new TorrentIdol(group, torrentIdol, RecipeType.MAGIC_WORKBENCH, torrentIdolRecipe);
         SlimefunItem terranIdolItem = new TerranIdol(group, terranIdol, RecipeType.MAGIC_WORKBENCH, terranIdolRecipe);
         SlimefunItem divineIdolItem = new DivineIdol(group, divineIdol, RecipeType.MAGIC_WORKBENCH, divineIdolRecipe);
-
 
         //########################
         //  REGISTER
@@ -880,6 +999,12 @@ public class Setup {
         trimVaultItem.register(plugin);
         wisterShearsItem.register(plugin);
         biomeCompassItem.register(plugin);
+        chiselItem.register(plugin);
+        electricPickItem.register(plugin);
+        electricShovelItem.register(plugin);
+
+        enchantedGoldenAppleItem.register(plugin);
+        badOmenPotionItem.register(plugin);
 
         radiationabsorber.register(plugin);
         radiationabsorber2.register(plugin);
@@ -896,6 +1021,8 @@ public class Setup {
         electricLogStripperItem.register(plugin);
         electricLogStripperItem2.register(plugin);
         electricLogStripperItem3.register(plugin);
+
+        electricShearerItem.register(plugin);
 
         zombieRepellerItem.register(plugin);
         spiderRepellerItem.register(plugin);

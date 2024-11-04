@@ -15,6 +15,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Damageable;
@@ -121,6 +122,7 @@ public class ElectricCable extends SlimefunItem implements EnergyNetComponent {
             dir.setY(0.3);
             entity.setVelocity(dir);
 
+            loc.getWorld().playSound(loc, Sound.ENTITY_ARROW_HIT, 0.5F, 5.0F);
             loc.getWorld().spawnParticle(Particle.ELECTRIC_SPARK, loc.add(0.5, 0.5, 0.5), 10, 0.3, 0.3, 0.3, 0.1);
         }
     }
