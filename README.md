@@ -10,6 +10,7 @@
   </a>
 </p>
 
+
 ## 如何工作
 > [!WARNING]
 > ### 需要 Slimefun 最新版本与 Java 21
