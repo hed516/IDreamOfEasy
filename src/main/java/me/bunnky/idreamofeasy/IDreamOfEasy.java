@@ -35,7 +35,7 @@ public class IDreamOfEasy extends JavaPlugin implements SlimefunAddon {
         int version = PaperLib.getMinecraftVersion();
         int patchVersion = PaperLib.getMinecraftPatchVersion();
 
-        if (version != MAJOR || patchVersion != PATCH) {
+        if (version < MAJOR) {
             getLogger().severe("###############################################");
             getLogger().severe("# IDOE 仅支持 Minecraft 版本 1." + MAJOR + "." + PATCH + " #");
             getLogger().severe("###############################################");
